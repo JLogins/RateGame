@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Game list";
+}
+@model List<RateGame.DAL.Game>
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="Home" asp-action="SearchByTitle">
+    <p>
+        Title: <input type="search" name="queryString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+@await Component.InvokeAsync("GamesList", Model)

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<RateGame.DAL.Game>
+@if (!(string.IsNullOrEmpty((string)ViewData["Message"])))
+{
+    <h4>@ViewData["Message"]</h4>
+}
+    <table class="gamesList">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AverageRating)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AverageRating)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
