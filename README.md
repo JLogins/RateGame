@@ -1,1 +1,2 @@
 # RateGame
+Test
